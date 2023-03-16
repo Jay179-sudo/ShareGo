@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+  web:
+    build: .
+    command: python ./manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/sharego
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    environment:
+      - "DJANGO_SECRET_KEY=django-insecure-bg*7s8(!mo7$7-p64e%a#fl4gy^ipsf!=*(ul=rv(g2ub^!_*i"
+      - "DJANGO_DEBUG=True"
+
+volumes:
+  postgres_data:
