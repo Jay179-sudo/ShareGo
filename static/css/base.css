@@ -1,0 +1,29 @@
+*{
+    font-family: 'Recursive', sans-serif;
+}
+
+.bichha
+{
+    text-align: center;
+}
+
+.main
+{
+    display: block;
+    width:100%;
+    justify-content: center;
+    margin: 5%;
+}
+
+.saano
+{
+    margin: 3%;
+    font-size: x-large;
+}
+
+.button-container-home
+{
+    display: block;
+    width: 100%;
+    
+}

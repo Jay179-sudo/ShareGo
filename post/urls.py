@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-from .views import home
+from .views import home, upload_file
 urlpatterns = [
-    path('', home),
+    path('', home, name='home'),
+    path('upload', upload_file, name='upload'),
 ]

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="bichha">Hi! Welcome to ShareGo!</h1>
+    <h3 class="bichha saano">A simple way to share with friends, family and everyone around the globe!</h3>
+
+    <div class="button-container-home container block">
+        {% if user.is_authenticated %}
+            <p1 class="bichha">Welcome! Get started</p1>
+        {% else %}
+            <button type="button" class="btn btn-light">Login!</button>
+            <button type="button" class="btn btn-light">Signup!</button>
+        {% endif %}
+            
+    </div>
+{% endblock %}
