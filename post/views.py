@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from .models import Post
 # Create your views here.
 def home(request):
@@ -22,3 +24,17 @@ def upload_file(request):
     else:
         form = ArticleForm()
     return render(request, 'post/upload.html', {'form': form})
+
+@login_required
+def content(request):
+    authors = get_user_model().objects.all()
+    return render(request, 'post/content.html', {'authors': authors})
+
+@login_required
+def detailcontent(request, username):
+
+    # author = User.objects.all().filter(username=username)
+    # post = Post.objects.all().filter(author=author)
+    author = User.objects.get(username=username)
+    post = Post.objects.all().filter(author=author)
+    return render(request, 'post/detail.html', {'author': post})

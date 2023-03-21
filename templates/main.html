@@ -5,7 +5,8 @@
 
     <div class="button-container-home container block">
         {% if user.is_authenticated %}
-            <p1 class="bichha">Welcome! Get started</p1>
+            <a href="{% url 'content' %}"><button type="button" class="btn btn-light">Welcome! Click here to get started!</button></a>
+            
         {% else %}
             <button type="button" class="btn btn-light">Login!</button>
             <button type="button" class="btn btn-light">Signup!</button>

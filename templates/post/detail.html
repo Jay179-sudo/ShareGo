@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}Detailed{% endblock title %}
+{% block content %}
+    {% for post in author %}
+        <p>{{post.file}}</p>
+    {% endfor %}
+{% endblock %}
