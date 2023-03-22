@@ -8,8 +8,8 @@
             <a href="{% url 'content' %}"><button type="button" class="btn btn-light">Welcome! Click here to get started!</button></a>
             
         {% else %}
-            <button type="button" class="btn btn-light">Login!</button>
-            <button type="button" class="btn btn-light">Signup!</button>
+            <a href = "{% url 'login' %}"><button type="button" class="btn btn-light">Login!</button></a>
+            <a href="{% url 'signup' %}"><button type="button" class="btn btn-light">Signup!</button></a>
         {% endif %}
             
     </div>

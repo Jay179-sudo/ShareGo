@@ -2,6 +2,6 @@
 {% block title %}Detailed{% endblock title %}
 {% block content %}
     {% for post in author %}
-        <p>{{post.file}}</p>
+    <a href="#" class="list-group-item list-group-item-action">{{post.title}}</a>
     {% endfor %}
 {% endblock %}

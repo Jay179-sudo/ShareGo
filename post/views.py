@@ -27,7 +27,7 @@ def upload_file(request):
 
 @login_required
 def content(request):
-    authors = get_user_model().objects.all()
+    authors = get_user_model().objects.all().order_by('username')
     return render(request, 'post/content.html', {'authors': authors})
 
 @login_required
